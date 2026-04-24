@@ -493,6 +493,26 @@ For issues, questions, or feature requests, please use the support portal within
 
 ---
 
+## Screenshot
+Below are the official screenshots of the web application in a desktop browser:
+
+<img width="1880" height="1026" alt="image" src="https://github.com/user-attachments/assets/3f37c4a6-3029-4915-b204-a3b330820a46" />
+<img width="1914" height="1013" alt="image" src="https://github.com/user-attachments/assets/ef20af6c-e8de-4304-9a5f-818ee86135ec" />
+<img width="1875" height="1021" alt="image" src="https://github.com/user-attachments/assets/a7a90dbe-5aac-4345-b9fd-cdb0c1fd54e2" />
+<img width="1891" height="1044" alt="image" src="https://github.com/user-attachments/assets/40d6a16c-7fea-4d33-ad02-de503c5b172c" />
+<img width="1906" height="1031" alt="image" src="https://github.com/user-attachments/assets/8b99e5e1-43f3-4141-8fc6-b5da282ed0f3" />
+<img width="887" height="509" alt="image" src="https://github.com/user-attachments/assets/307d4821-a31c-4786-9116-c086e1b61958" />
+<img width="1883" height="1034" alt="image" src="https://github.com/user-attachments/assets/05023b7c-67b0-450a-8153-f5ed5d8d394b" />
+<img width="611" height="330" alt="image" src="https://github.com/user-attachments/assets/8f7b24dc-e20f-4c16-a7ed-c4d1f9f6e1f3" />
+<img width="1886" height="1029" alt="image" src="https://github.com/user-attachments/assets/f2e55f43-9f28-43a2-b1b8-9153eb5057fa" />
+<img width="1888" height="1030" alt="image" src="https://github.com/user-attachments/assets/e13fad0c-3f48-45b1-938b-c822ad9d29f5" />
+<img width="1880" height="1038" alt="image" src="https://github.com/user-attachments/assets/4f0b7a86-123e-4bb3-b248-d52b7bbcd6e1" />
+<img width="1897" height="1027" alt="image" src="https://github.com/user-attachments/assets/c9bee1d6-c87e-48ee-b6f2-650a6e06eeb7" />
+<img width="1904" height="1030" alt="image" src="https://github.com/user-attachments/assets/179e8091-5d99-421a-8f68-1acd1a570325" />
+<img width="1902" height="1020" alt="image" src="https://github.com/user-attachments/assets/c67fa8c9-397f-49a0-bb82-912a500b43c5" />
+
+
+
 **Last Updated**: April 24, 2026
 **Version**: 1.1 (PWA-Enabled)
 **Repository**: https://github.com/Yuri-github-coding/firstattempt2026_Banaag.git
