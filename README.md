@@ -258,16 +258,32 @@ npm run preview
    - Verify the manifest is loaded and valid
 4. Go to **Application** tab → **Service Workers**
    - You should see your service worker registered and active
+   - **Look for console log**: ✅ Service Worker Registered Successfully
 5. Go to **Application** tab → **Cache Storage**
-   - You should see `alumni-hub-v1` cache with cached resources
+   - You should see `v1-pwa-cache` with all precached assets
 
-#### Method 2: Test Offline Mode
+#### Method 2: Offline Stress Test ⚠️ CRITICAL
+
+This is the main offline stress test to verify complete offline functionality:
 
 1. In DevTools → **Application** tab → **Service Workers**
-2. Check the **Offline** checkbox
+2. **CHECK the "Offline" checkbox** ✓
 3. Reload the page (press `F5`)
-4. The app should still load and function with cached content
-5. Try clicking links - previously visited pages should load
+4. **Verify NO 404 errors** in console
+5. **Navigate between pages** - all should work from cache
+6. **Check cache logs** in console - should show "Cache HIT"
+
+**Expected Console Output During Offline Test:**
+```
+[Service Worker] Cache HIT (document): /alumni/home
+[Service Worker] Cache HIT: /assets/css/main.css
+[PWA] Application is now offline
+[PWA] Using cached content from precache
+```
+
+**If you see 404 errors, the test FAILED - check troubleshooting below**
+
+For detailed offline stress test instructions, see: [OFFLINE_STRESS_TEST.md](./OFFLINE_STRESS_TEST.md)
 
 #### Method 3: Test Installation (Chrome/Edge Desktop)
 
@@ -285,6 +301,48 @@ npm run preview
 4. Look for the **"Install App"** prompt
 5. Click "Install" → Add to home screen
 6. The app icon will appear on your home screen
+
+### Precaching Strategy (Updated)
+
+Alumni Hub now uses a **PRECACHING STRATEGY** for strict offline functionality:
+
+**What is Precaching?**
+- All critical assets are downloaded and cached during Service Worker installation
+- App works 100% offline without requiring prior visits
+- No assets are fetched from network during offline mode
+- All pages, CSS, images are cached upfront
+
+**Assets Precached:**
+- All HTML pages (/, /alumni/home, /alumni/login, etc.)
+- CSS files (/assets/css/main.css)
+- Application manifest and metadata
+- University branding icons (when added)
+- Offline fallback page (/offline.html)
+
+**Cache Configuration:**
+```javascript
+// In public/sw.js
+const CACHE_NAME = 'v1-pwa-cache'
+
+const assetsToCache = [
+  '/',
+  '/alumni/home',
+  '/alumni/login',
+  '/alumni/dashboard',
+  // ... more pages
+  '/assets/css/main.css',
+  '/offline.html',
+  '/manifest.json',
+  '/icons/icon-*.png'
+]
+```
+
+**Fetch Strategy:**
+1. **Cache First**: Check cache before network
+2. **If cached**: Serve from cache immediately
+3. **If not cached**: Try network
+4. **If offline**: Use offline.html fallback
+5. **Result**: NO 404 errors offline ✅
 
 ### Browser Support for PWA
 
