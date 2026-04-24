@@ -1,0 +1,15 @@
+{
+  "name": "alumni-hub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "nuxt-icon": "^0.6.10"
+  }
+}

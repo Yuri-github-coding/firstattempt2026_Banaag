@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --royal: #1e3a6e;
+  --royal-dark: #0f1d38;
+  --gold: #c9a84c;
+  --gold-light: #e8d08a;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #f0f4fa;
+}
+
+/* Page max-width to simulate mobile-first but adapted for web */
+.page-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #f0f4fa;
+  position: relative;
+}
+
+/* Scrollbar hiding */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Card hover animation */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 58, 110, 0.12);
+}
+
+/* Status badge animations */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.4) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth page transitions */
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.page-enter-from { opacity: 0; transform: translateY(8px); }
+.page-leave-to { opacity: 0; transform: translateY(-8px); }
+
+/* Modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Royal gradient */
+.royal-gradient {
+  background: linear-gradient(135deg, #1e3a6e 0%, #0f1d38 60%, #1a2f5a 100%);
+}
+
+/* Gold accent line */
+.gold-accent {
+  background: linear-gradient(90deg, #c9a84c, #e8d08a, #c9a84c);
+}
+
+/* Verified badge */
+.verified-badge {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Status timeline line */
+.timeline-line {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: #e5e7eb;
+  z-index: 0;
+}
+.timeline-line-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.5s ease;
+}
